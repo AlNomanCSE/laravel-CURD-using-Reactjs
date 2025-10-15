@@ -21,7 +21,6 @@ interface Post {
     };
 }
 export default function Posts({ posts }: { posts: Post[] }) {
-    console.log(posts);
     
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
