@@ -76,7 +76,7 @@ export default function EditPost({ post: postData }: { post: Post }) {
                             disabled={processing}
                             className='w-full px-4 py-2 bg-amber-400 text-white rounded-md hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 transition duration-200 text-lg'
                         >
-                            Update Post
+                            {processing ? ' Updaing ...' : ' Update Post'}
                         </button>
                     </form>
                 </div>

@@ -1,7 +1,9 @@
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link } from '@inertiajs/react';
-
+import dayjs from "dayjs";
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 const breadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Posts',
@@ -21,7 +23,7 @@ interface Post {
     };
 }
 export default function Posts({ posts }: { posts: Post[] }) {
-    
+
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Posts" />
@@ -81,7 +83,7 @@ export default function Posts({ posts }: { posts: Post[] }) {
                                             {post.user?.name || 'Unknown'}
                                         </td>
                                         <td className='border border-gray-300 dark:border-gray-700 px-4 py-2'>
-                                            {new Date(post.created_at).toLocaleDateString()}
+                                            {dayjs(post.created_at).fromNow()}
                                         </td>
                                         <td className='border border-gray-300 dark:border-gray-700 px-4 py-2'>
                                             <div className='flex gap-2'>
