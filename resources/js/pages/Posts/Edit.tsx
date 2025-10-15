@@ -26,11 +26,14 @@ export default function EditPost({ post: postData }: { post: Post }) {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        put(`/posts/${postData.id}`, {
-            onSuccess: () => {
-                // Optionally handle success (e.g., redirect or show a message)
-            },
-        });
+        put(`/posts/${postData.id}`,
+            // optional
+            // {
+            // onSuccess: () => {
+            // Optionally handle success (e.g., redirect or show a message)
+            // },
+            // }
+        );
     };
 
     return (

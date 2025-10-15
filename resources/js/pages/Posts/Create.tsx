@@ -17,11 +17,7 @@ export default function CreatePost() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        post('/posts', {
-            onSuccess: () => {
-                // Optionally handle success (e.g., redirect or show a message)
-            },
-        });
+        post('/posts');
     };
 
     return (
